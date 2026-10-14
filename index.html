@@ -1,0 +1,248 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="An interactive learning lab for exploring common user interface elements.">
+  <title>User Interaction elements</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <a class="skip-link" href="#playground">Skip to interaction lab</a>
+
+  <header class="site-header">
+    <a class="brand" href="#" aria-label="Interaction Lab home">
+      <span class="brand-mark" aria-hidden="true">
+        <span></span><span></span><span></span>
+      </span>
+      <span>INTERACTION LAB</span>
+    </a>
+    <nav aria-label="Main navigation">
+      <a href="#concept">The concept</a>
+      <a href="#playground">Playground</a>
+      <a href="#challenge">Challenge</a>
+    </nav>
+    <a class="header-cta" href="#playground">Start exploring <span aria-hidden="true">↘</span></a>
+  </header>
+
+  <main>
+    <section class="hero" aria-labelledby="page-title">
+      <div class="hero-copy">
+        <p class="eyebrow"><span></span> AP CSP · HUMAN–COMPUTER INTERACTION</p>
+        <h1 id="page-title">User<br><em>Interaction</em><br>elements<span class="title-dot">.</span></h1>
+        <p class="hero-intro">Every tap, click, and keystroke is a conversation between a person and a computer. Let’s see what happens in between.</p>
+        <a class="primary-button" href="#concept">Explore the system <span aria-hidden="true">↓</span></a>
+      </div>
+
+      <div class="hero-visual" aria-label="Animated diagram showing a cursor interacting with a button">
+        <div class="orbit orbit-one"></div>
+        <div class="orbit orbit-two"></div>
+        <div class="visual-label label-input"><span>01</span> INPUT</div>
+        <div class="visual-label label-output"><span>03</span> OUTPUT</div>
+        <div class="demo-window">
+          <div class="window-bar">
+            <span></span><span></span><span></span>
+            <p>interaction_demo.html</p>
+          </div>
+          <div class="window-body">
+            <p class="code-caption">&lt;button&gt;</p>
+            <button class="giant-button" id="heroButton" type="button">CLICK ME</button>
+            <div class="cursor-icon" aria-hidden="true">
+              <svg viewBox="0 0 44 52"><path d="M4 3L39 31L22 34L15 49L4 3Z"/></svg>
+            </div>
+            <p class="hero-click-count" id="heroClickCount" aria-live="polite">0 interactions</p>
+          </div>
+        </div>
+        <div class="process-chip"><span>02</span> PROCESS <b>event → function()</b></div>
+      </div>
+    </section>
+
+    <section class="concept-section" id="concept" aria-labelledby="concept-title">
+      <div class="section-heading">
+        <p class="eyebrow"><span></span> THE CORE CONCEPT</p>
+        <h2 id="concept-title">One simple <em>loop.</em></h2>
+        <p>Applications follow the same three-step pattern, whether you’re sending a text or piloting a rover.</p>
+      </div>
+
+      <div class="loop-grid">
+        <article class="loop-card card-input">
+          <div class="card-number">01</div>
+          <div class="card-icon" aria-hidden="true">↘</div>
+          <h3>INPUT</h3>
+          <p>You give the application information through a control.</p>
+          <code>click · type · select</code>
+        </article>
+        <div class="flow-arrow" aria-hidden="true">→</div>
+        <article class="loop-card card-process">
+          <div class="card-number">02</div>
+          <div class="card-icon" aria-hidden="true">⌘</div>
+          <h3>PROCESS</h3>
+          <p>The application follows instructions and transforms the data.</p>
+          <code>check · calculate · decide</code>
+        </article>
+        <div class="flow-arrow" aria-hidden="true">→</div>
+        <article class="loop-card card-output">
+          <div class="card-number">03</div>
+          <div class="card-icon" aria-hidden="true">✦</div>
+          <h3>OUTPUT</h3>
+          <p>The application communicates the result back to you.</p>
+          <code>display · sound · motion</code>
+        </article>
+      </div>
+    </section>
+
+    <section class="playground-section" id="playground" aria-labelledby="playground-title">
+      <div class="playground-heading">
+        <div>
+          <p class="eyebrow light"><span></span> INTERACTIVE PLAYGROUND</p>
+          <h2 id="playground-title">Try the <em>elements.</em></h2>
+        </div>
+        <p>Change any input. Watch how the preview and event log respond in real time.</p>
+      </div>
+
+      <div class="workbench">
+        <form class="control-panel" id="profileForm">
+          <div class="panel-title">
+            <div><span class="status-dot"></span> CONTROL PANEL</div>
+            <span>INPUT</span>
+          </div>
+
+          <div class="control-group">
+            <label for="studentName">Your name <span>TEXT FIELD</span></label>
+            <input type="text" id="studentName" name="studentName" placeholder="Type something..." maxlength="24" autocomplete="off">
+          </div>
+
+          <div class="control-group">
+            <label for="studentAge">Your age <span>NUMBER FIELD</span></label>
+            <div class="number-control">
+              <button type="button" id="decreaseAge" aria-label="Decrease age">−</button>
+              <input type="number" id="studentAge" name="studentAge" value="16" min="13" max="19" aria-label="Age">
+              <button type="button" id="increaseAge" aria-label="Increase age">+</button>
+            </div>
+          </div>
+
+          <div class="control-group">
+            <label for="studentStatus">Your status <span>DROP-DOWN LIST</span></label>
+            <select id="studentStatus" name="studentStatus">
+              <option value="Curious" selected>Curious</option>
+              <option value="Crazy">Crazy</option>
+              <option value="Calm">Calm</option>
+              <option value="Concerned">Concerned</option>
+            </select>
+          </div>
+
+          <fieldset class="control-group">
+            <legend>Choose a theme <span>RADIO BUTTONS</span></legend>
+            <div class="theme-options">
+              <label class="theme-option">
+                <input type="radio" name="theme" value="blue" checked>
+                <span class="theme-swatch blue"></span>
+                BLUE
+              </label>
+              <label class="theme-option">
+                <input type="radio" name="theme" value="red">
+                <span class="theme-swatch red"></span>
+                RED
+              </label>
+              <label class="theme-option">
+                <input type="radio" name="theme" value="green">
+                <span class="theme-swatch green"></span>
+                GREEN
+              </label>
+            </div>
+          </fieldset>
+
+          <fieldset class="control-group">
+            <legend>Add interests <span>CHECKBOXES</span></legend>
+            <div class="check-grid">
+              <label><input type="checkbox" name="interest" value="Code" checked><span>✓</span> Code</label>
+              <label><input type="checkbox" name="interest" value="Design"><span>✓</span> Design</label>
+              <label><input type="checkbox" name="interest" value="Games"><span>✓</span> Games</label>
+              <label><input type="checkbox" name="interest" value="Music"><span>✓</span> Music</label>
+            </div>
+          </fieldset>
+
+          <div class="control-group toggle-row">
+            <div>
+              <label for="motionToggle">Enable motion</label>
+              <p>Animate the preview card</p>
+            </div>
+            <label class="switch">
+              <input type="checkbox" id="motionToggle">
+              <span class="slider"></span>
+            </label>
+          </div>
+
+          <div class="button-row">
+            <button class="generate-button" type="submit">Generate output <span>→</span></button>
+            <button class="reset-button tooltip" type="reset" aria-label="Reset all controls">
+              ↺
+              <span class="tooltip-text" role="tooltip">Reset all inputs</span>
+            </button>
+          </div>
+        </form>
+
+        <div class="output-panel">
+          <div class="panel-title">
+            <div><span class="status-dot"></span> LIVE OUTPUT</div>
+            <span>OUTPUT</span>
+          </div>
+
+          <article class="profile-card theme-blue" id="profileCard">
+            <div class="card-topline">
+              <span>STUDENT_PROFILE.EXE</span>
+              <div class="mini-controls"><i></i><i></i><i></i></div>
+            </div>
+            <p class="profile-label">HELLO, MY NAME IS</p>
+            <h3 id="outputName">YOUR NAME</h3>
+            <div class="profile-details">
+              <p><span>AGE</span><strong id="outputAge">16</strong></p>
+              <p><span>STATUS</span><strong id="outputStatus">CURIOUS</strong></p>
+            </div>
+            <div class="interest-tags" id="interestTags">
+              <span>#CODE</span>
+            </div>
+          </article>
+
+          <div class="event-log" aria-live="polite">
+            <div class="log-heading"><span>EVENT LOG</span><button type="button" id="clearLog">CLEAR</button></div>
+            <ol id="logList">
+              <li><time>READY</time><span>Waiting for your input...</span></li>
+            </ol>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="challenge-section" id="challenge" aria-labelledby="challenge-title">
+      <div>
+        <p class="eyebrow"><span></span> QUICK CHALLENGE</p>
+        <h2 id="challenge-title">Can you trace the <em>interaction?</em></h2>
+      </div>
+      <div class="challenge-card">
+        <p>A student selects <strong>“Red”</strong> from the theme options. Which part is the <strong>process</strong>?</p>
+        <div class="answer-list" id="answerList">
+          <button type="button" data-correct="false"><b>A</b> The student clicks the radio button</button>
+          <button type="button" data-correct="true"><b>B</b> The app reads “red” and updates the card’s colors</button>
+          <button type="button" data-correct="false"><b>C</b> The card appears with a red background</button>
+        </div>
+        <p class="answer-feedback" id="answerFeedback" aria-live="polite">Choose an answer to check your thinking.</p>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="brand">
+      <span class="brand-mark" aria-hidden="true"><span></span><span></span><span></span></span>
+      <span>INTERACTION LAB</span>
+    </div>
+    <p>Built for curious minds · AP Computer Science Principles</p>
+    <a href="#">Back to top ↑</a>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
